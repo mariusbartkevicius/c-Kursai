@@ -25,6 +25,19 @@ namespace Tetee
 
         }
 
+        static int Kazkas2(ref int sk)
+        {
+            sk = sk * 2;
+            return sk;
 
+        }
+
+        static int Kazkas3(out int sk)
+        {
+            sk = 3;
+            sk = sk * 2;
+            return sk;
+
+        }
     }
 }
