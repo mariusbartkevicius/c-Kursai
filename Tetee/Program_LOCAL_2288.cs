@@ -4,11 +4,8 @@ namespace Tetee
 {
     class Program
     {
-      static Random random = new Random();
-
-        static void Main()
+        static void Main(string[] args)
         {
-
             Console.WriteLine(Max(1, 2, 3));
             Console.WriteLine(Max(4, 2, 3));
             Console.WriteLine(Max(1, 5, 3));
@@ -18,18 +15,10 @@ namespace Tetee
             Console.WriteLine(IfNumberInRange(-5, 0, 10));
             Console.WriteLine(IfNumberInRange(-5, 10, 0));
             Console.WriteLine(IfNumberInRange(5, 5, 5));
-        
-
-            Console.Write("Ivesk skaiciu ir as pasakysiu as jis pirminis: ");
-            Int32 skaicius = Convert.ToInt32(Console.ReadLine());
-           Console.WriteLine(CheckIsPrime(skaicius));
-
-            Console.WriteLine(D20());
-
         }
 
 
-    static int Max(int sk1, int sk2, int sk3)
+        static int Max(int sk1, int sk2, int sk3)
         {
 
             if (sk1 > sk2 && sk1 > sk3)
@@ -57,28 +46,7 @@ namespace Tetee
             bool answer = skaicius >= minValue && skaicius <= maxValue;
             return answer;
         }
- 
-        static bool CheckIsPrime(long number)
-        {
-
-            if (number <= 1)
-                return false;
-            else if (number % 2 == 0)
-                return number == 2;
-
-            long N = (long)(Math.Sqrt(number) + 0.5);
-
-            for (int i = 3; i <= N; i += 2)
-                if (number % i == 0)
-                    return false;
-
-            return true;
 
 
-}
-            static int D20()
-            {
-                return random.Next(0, 20) + 1;
-            }
-
+    }
 }
