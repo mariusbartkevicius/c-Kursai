@@ -6,38 +6,30 @@ namespace Tetee
     {
         static void Main(string[] args)
         {
-            int number = 5;
-            Console.WriteLine("start :" + number);
-            Kazkas(number);
-            Console.WriteLine("after normal :" + number);
-            Kazkas2(ref number);
-            Console.WriteLine("after ref :" + number);
-            Kazkas3(out number);
-            Console.WriteLine("after out :" + number);
-
+            Console.WriteLine(Max(1, 2, 3));
+            Console.WriteLine(Max(4, 2, 3));
+            Console.WriteLine(Max(1, 5, 3));
+            Console.WriteLine(Max(6, 6, 6));
         }
 
 
-        static int Kazkas(int sk)
+        static int Max(int sk1, int sk2, int sk3)
         {
-            sk = sk * 2;
-            return sk;
+
+            if (sk1 > sk2 && sk1 > sk3)
+            {
+                return sk1;
+            }
+            else if (sk2 > sk3)
+            {
+
+                return sk2;
+            } else
+
+                return sk3;
 
         }
 
-        static int Kazkas2(ref int sk)
-        {
-            sk = sk * 2;
-            return sk;
 
-        }
-
-        static int Kazkas3(out int sk)
-        {
-            sk = 3;
-            sk = sk * 2;
-            return sk;
-
-        }
     }
 }
