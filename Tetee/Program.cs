@@ -10,6 +10,11 @@ namespace Tetee
             Console.WriteLine(Max(4, 2, 3));
             Console.WriteLine(Max(1, 5, 3));
             Console.WriteLine(Max(6, 6, 6));
+
+            Console.WriteLine(IfNumberInRange(5, 0, 10));
+            Console.WriteLine(IfNumberInRange(-5, 0, 10));
+            Console.WriteLine(IfNumberInRange(-5, 10, 0));
+            Console.WriteLine(IfNumberInRange(5, 5, 5));
         }
 
 
@@ -28,6 +33,18 @@ namespace Tetee
 
                 return sk3;
 
+        }
+
+
+        static bool IfNumberInRange(int skaicius, int minValue, int maxValue)
+        {
+            if (minValue > maxValue)
+            {
+                Console.WriteLine("Demesio, blogi skaiciai");
+            }
+
+            bool answer = skaicius >= minValue && skaicius <= maxValue;
+            return answer;
         }
 
 
